@@ -1,3 +1,4 @@
+'''
 from django.urls import path
 from . import views
 
@@ -7,4 +8,15 @@ urlpatterns = [
     path('strings/<str:string_value>/', views.get_string, name='get_string'),  # GET one
     path('strings/<str:string_value>/delete/', views.delete_string, name='delete_string'),  # DELETE
     path('strings/filter-by-natural-language/', views.filter_by_nl, name='filter_by_nl'),  # GET
+]
+'''
+
+from django.urls import path
+from django.http import HttpResponse
+
+def test_view(request):
+    return HttpResponse("App is running!")
+
+urlpatterns = [
+    path('', test_view),
 ]
