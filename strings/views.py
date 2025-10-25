@@ -137,7 +137,8 @@ def parse_nl_query(q: str):
     return parsed
 
 # ---------- POST /strings/ ----------
-@method_decorator(csrf_exempt, name='dispatch')
+#@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 def create_string(request):
     if request.method != 'POST':
         return HttpResponseNotAllowed(['POST'])

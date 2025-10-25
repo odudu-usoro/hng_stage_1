@@ -12,11 +12,24 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+
 from django.contrib import admin
 from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('strings.urls')),
+]
+"""
+
+from django.http import JsonResponse
+from django.urls import path, include
+
+def home(request):
+    return JsonResponse({"message": "String Analyzer API is running"})
+
+urlpatterns = [
+    path('', home),  # add this line
+    path('api/', include('strings.urls')),
 ]
