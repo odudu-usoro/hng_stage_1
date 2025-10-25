@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('strings/', views.create_string, name='create_string'),  # POST
+    path('strings/add/', views.create_string, name='create_string'), # POST
     path('strings/all/', views.list_strings, name='list_strings'),  # GET all
     path('strings/<str:string_value>/', views.get_string, name='get_string'),  # GET one
     path('strings/<str:string_value>/delete/', views.delete_string, name='delete_string'),  # DELETE
